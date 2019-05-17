@@ -10,7 +10,7 @@ app.use(express.json());
 var friends = [
   {
     name: "Leonardo Di Caprio",
-    photo: "",
+    photo: "https://media.fromthegrapevine.com/assets/images/2017/1/dicaprio-the-revenant.jpg.480x0_q71_crop-scale.jpg",
     scores: [
       4, 
       5,
@@ -26,7 +26,7 @@ var friends = [
   },
   {
     name: "Brad Pitt",
-    photo: "",
+    photo: "https://4.bp.blogspot.com/-VRdaP8tBQtg/UlHD29tqFfI/AAAAAAAAJkY/RArHErLYH3s/s1600/bradpitt12.jpg",
     scores: [
       3, 
       4,
@@ -41,8 +41,8 @@ var friends = [
     ]
   },
   {
-    name: "Lady Gaga",
-    photo: "",
+    name: "Gemma Chan",
+    photo: "https://media.allure.com/photos/5c86d52ea1ded52cd8d16df5/master/w_1600,c_limit/0419-allure-covershoot-gemma-chan-valentino-dress.png",
     scores: [
       5, 
       4,
@@ -58,7 +58,7 @@ var friends = [
   },
   {
     name: "Scarlett Johansson",
-    photo: "",
+    photo: "https://www.biography.com/.image/t_share/MTE4MDAzNDEwNzkxODU5NzI2/scarlett-johansson-13671719-2-raw.jpg",
     scores: [
       1, 
       2,
@@ -74,7 +74,7 @@ var friends = [
   },
   {
     name: "George Clooney",
-    photo: "",
+    photo: "https://media.vanityfair.com/photos/59b44c69d70a6f4da60eae81/master/pass/george-clooney-steve-bannon.jpg",
     scores: [
       5, 
       2,
@@ -90,7 +90,7 @@ var friends = [
   },
   {
     name: "Charlize Theron",
-    photo: "",
+    photo: "https://media.glamour.com/photos/5741e69371044eac28a61cd6/master/pass/charlize-theron-cannes-getty.jpg",
     scores: [
       1, 
       1,
