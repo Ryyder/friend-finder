@@ -1,12 +1,4 @@
-var express = require("express");
-var path = require("path");
-
-var PORT = process.env.PORT || 8000;
-var app = express();
-app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
+//our friends array object
 var friends = [
   {
     name: "Leonardo Di Caprio",
@@ -105,3 +97,6 @@ var friends = [
     ]
   }
 ];
+
+//use this as our module to use in other js files
+module.export = friends;

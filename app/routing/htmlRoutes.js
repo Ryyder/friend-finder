@@ -1,16 +1,12 @@
-var express = require("express");
+//variable used for path package
 var path = require("path");
-
-var PORT = process.env.PORT || 8000;
-var app = express();
+//routes to our home page
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "public/survey.html"));
-});
 
-app.listen(PORT, function() {
-  console.log("app is listening");
+//routes to our survey page
+app.get("/survey", function(req, res) {
+  res.sendFile(path.join(__dirname, "/../public/survey.html"));
 });

@@ -1,14 +1,7 @@
-var express = require("express");
-var path = require("path");
-
-var PORT = process.env.PORT || 8000;
-var app = express();
-app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+var friends = require("../data/friends");
 
 app.get("/api/friends", function(req, res) {
-  return res.json({reservedTables, waitlist});
+  return res.json(friends);
 });
 
 app.post("/api/friends", function(req, res) {
