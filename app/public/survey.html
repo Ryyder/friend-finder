@@ -8,7 +8,7 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-  <title>Survey</title>
+  <title>Celebrity Friend Finder Survey</title>
 </head>
 <body>
   <h1>Survey</h1>
@@ -53,7 +53,7 @@
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
-    <h3>6: I like to travel more than staying at home?</h3>
+    <h3>6: I like whiskey more than beer?</h3>
     <select id="q6">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -61,7 +61,7 @@
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
-    <h3>7: I prefer listening to music more than reading a book?</h3>
+    <h3>7: I am good at cooking?</h3>
     <select id="q7">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -69,7 +69,7 @@
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
-    <h3>8: I like to be outdoors more than indoors?</h3>
+    <h3>8: I exercise often?</h3>
     <select id="q8">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -100,6 +100,24 @@
 </html>
 
 <!-- Our javascript -->
-<script type="text.javascript">
+<script type="text/javascript">
+
+  $("#submit").on("click", function(event) {
+    event.preventDefault();
+    console.log(event);
+    var q1 = $("#q1").val();
+    var q2 = $("#q2").val();
+    var q3 = $("#q3").val();
+    var q4 = $("#q4").val();
+    var q5 = $("#q5").val();
+    var q6 = $("#q6").val();
+    var q7 = $("#q7").val();
+    var q8 = $("#q8").val();
+    var q9 = $("#q9").val();
+    var q10 = $("#q10").val();
+
+    console.log(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10);
+
+  });
 
 </script>
