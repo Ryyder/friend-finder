@@ -1,6 +1,7 @@
 //variable used for path package
 var path = require("path");
 
+//module exports lets us use this in other js files
 module.exports = function(app) {
 
   //routes to our survey page
