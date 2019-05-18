@@ -1,23 +1,24 @@
+// Dependencies
 var express = require("express");
+var bodyParser = require("body-parser");
 var path = require("path");
 
-var PORT = process.env.PORT || 3000;
 var app = express();
-app.use(express.static("public"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
-app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "public/survey.html"));
-});
+var PORT = process.env.PORT || 3000;
 
-app.post("/api/survey", function(req, res){
-  console.log("survey was received");
-  console.log(req.body);
-  res.send("Server heard you");
-});
+// For serving of static CSS
+app.use(express.static(__dirname + "/app/css"));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.text());
+
+
+// API and HTML routes
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
 app.listen(PORT, function() {
-  console.log("app is listening");
+	console.log("App listening on PORT: " + PORT);
 });
-

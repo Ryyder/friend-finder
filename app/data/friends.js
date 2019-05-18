@@ -99,4 +99,4 @@ var friends = [
 ];
 
 //use this as our module to use in other js files
-module.export = friends;
+module.exports = friends;
