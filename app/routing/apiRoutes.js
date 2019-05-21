@@ -16,32 +16,32 @@ module.exports = function(app) {
       newUser.scores[i] = parseInt(newUser.scores[i]);
     }
     
-  //set currentBest value
-  var currentBest = 100;
-  //set default friend as first friend, however the best match will be the minimum difference of the scores added together
-  var bestie = 0;
-  //outer for-loop, loops through the friends array
-  for(var i = 0; i < friends.length; i++) {
-    var total = 0;
-    //inner for-loop loops through scores array
-    for(var j = 0; j < friends[i].scores.length; j++) {
-      //take the absolute difference of the newUsers score - friends score
-      var minDiff = Math.abs(newUser.scores[j] - friends[i].scores[j]);
-      //increment total by the minDiff
-      total += minDiff; 
+    var bestMatch;
+    var currentBest = 100;
+    
+    var maxDiff = [];
+    for (i = 0; i < friends.length; i++) {
+      var currentFriend = friends[i].scores;
+      console.log(currentFriend)
+      for (var j = 0; j < currentFriend.length; j++) {
+        maxDiff.push(Math.abs(currentFriend[j] - newUser.scores[j]));
+        var total =  maxDiff.reduce((a, b) => a + b)
+      }
+      
+      maxDiff = [];
+      if(total < currentBest) {
+       currentBest = total;
+       bestMatch = friends[i];
+      }
+      
     }
-  }
-
-  //compare total value to currentBest, if total is less than current best, bestie holds that ith friend and sets total to currentBest
-  if (total < currentBest) {
-    bestie = i;
-    currentBest = total;
-  }
 
   //push newUser after finding match
   friends.push(newUser);
+
+  console.log(bestMatch);
   //sends this best match back to the client
-  res.json(friends[bestie]);
+  res.json(bestMatch);
 
   });
 
