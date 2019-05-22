@@ -154,8 +154,9 @@
       <footer class="footer">
         <p><a href="/api/friends">API Friends Link</a> | <a href="https://github.com/Ryyder/friend-finder">Github Link</a>
       </footer>
-    </div>
-    
+  </div>
+
+    <!-- js links -->
    <script
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -174,6 +175,7 @@
 
     var validate = true;
 
+    /* validation, make sure none of our fields are null */
     if($("#name").val() === "" || $("#photo").val() === "") {
       validate = false;
     }
@@ -181,6 +183,7 @@
       validate = false;
     }
 
+    /* if validation is good, grab all the values from our questions, name, and photo field. store in our object newUser */
     if(validate === true) {
       var newUser = {
         name: $("#name").val().trim(),
@@ -199,7 +202,9 @@
         ]
       };
 
+      /* post to our server, our apiRoutes.js handles the logic */
       $.post("/api/friends", newUser, function (data) {
+        /* we get a response back from our server and put in our best match to our modal */
         $("#best-match").text(data.name);
         $("#best-photo").attr("src", data.photo);
         $("#match").modal("toggle");
